@@ -1,6 +1,12 @@
 {
-   
-    "Language" : "English",
-    "Greeting" : "Hello World!"
-        
-}
+    "HelloCollection": [
+        {
+            "Language" : "English",
+            "Greeting" : "Hello World!"
+        },
+        {
+            "Language" : "français",
+            "Greeting" : "Bonjour le monde!"
+        }
+    ]
+} 
