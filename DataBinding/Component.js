@@ -8,6 +8,8 @@ sap.ui.core.UIComponent.extend("ui5.Component", {
         //call createContent
         sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
 
+        var oModel = new sap.ui.model.json.JSONModel("model/HelloModel.json");
+        this.setModel(oModel, "hello");
     },
 
     createContent: function () {
