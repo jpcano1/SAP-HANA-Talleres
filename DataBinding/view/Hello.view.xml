@@ -1,0 +1,6 @@
+<mvc:View controllerName="ui5.controller.Hello" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+
+    <StandardTile id="tileId" press="doIt" icon="sap-icon://world" title="Hello World" info="English" />
+
+
+</mvc:View>
