@@ -1,7 +1,31 @@
 jQuery.sap.declare("routing.Component");
 
 sap.ui.core.UIComponent.extend("routing.Component", {
-    metadata: {},
+    metadata: {
+        routing: {
+
+            config: {
+                viewType: "XML",
+                viewPath: "routing.view",
+                clearTarget: false,
+                transition: "slide"
+            },
+
+            routes: [{
+                pattern: "",
+                name: "Master1",
+                view: "Master1",
+                targetControl: "idAppControl",
+                targetAggregation: "masterPages",
+                subroutes: [{
+                    pattern: "Detail1",
+                    name: "Detail1",
+                    view: "Detail1",
+                    targetAggregation: "detailPages"
+                }]
+            }]
+        }
+    },
 
     init: function () {
 
