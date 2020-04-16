@@ -1,0 +1,24 @@
+{
+    "collection": [{
+            "prop1": "A",
+            "subcol": [{
+                    "subProp1": "One"
+                },
+                {
+                    "subProp1": "Two"
+                }
+            ]
+        },
+        {
+            "prop1": "B",
+            "subcol": [{
+                    "subProp1": "Three"
+                },
+                {
+                    "subProp1": "Four"
+                }
+            ]
+        }
+
+    ]
+}
