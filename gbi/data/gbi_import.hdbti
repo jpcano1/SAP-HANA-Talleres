@@ -29,8 +29,8 @@ import = [{
     header = false;
 },
 {
-    table = "gbi-student-274.gbi.data::GBI_274.MASTERDATA.PRODUCT_CATEGORIES";
+    table = "gbi-student-274.gbi.data::GBI_274.MASTERDATA.PRODUCTS";
     schema = "GBI_274";
-    file = "gbi-student-274.gbi.data:productcategory.csv";
+    file = "gbi-student-274.gbi.data:products.csv";
     header = false;
 }];
