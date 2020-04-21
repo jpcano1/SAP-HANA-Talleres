@@ -10,7 +10,6 @@ sap.ui.core.UIComponent.extend("routing.Component", {
                 clearTarget: false,
                 transition: "slide"
             },
-
             routes: [{
                 pattern: "",
                 name: "Master1",
@@ -18,7 +17,7 @@ sap.ui.core.UIComponent.extend("routing.Component", {
                 targetControl: "idAppControl",
                 targetAggregation: "masterPages",
                 subroutes: [{
-                    pattern: "Detail1",
+                    pattern: "Detail1/{entity}",
                     name: "Detail1",
                     view: "Detail1",
                     targetAggregation: "detailPages"

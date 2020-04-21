@@ -1,5 +1,9 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="routing.view.Detail1" xmlns:html="http://www.w3.org/1999/xhtml">
     <Page title="Detail1">
-        <content></content>
+        <content>
+            <List headerText="Detail 1 List" items="{subcol}">
+                <StandardListItem type="Active" press="handleListItemPress" title="{subProp1}" />
+            </List>
+        </content>
     </Page>
 </core:View>
