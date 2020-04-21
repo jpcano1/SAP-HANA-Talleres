@@ -1,0 +1,119 @@
+namespace "gbi-student-274".gbi.data;
+
+@Schema: 'GBI_274'
+context GBI_274 {
+    type AddressType {
+        Address: String(35);
+        City: String(20);
+        Region: String(2);
+        Country: String(2);
+        Postal_code: String(5);
+    };
+    type BusinessIDType: String(10);
+    type OrgUnitIDType: String(4);
+    type PhoneType: String(14);
+    type ValueType: Decimal(17, 3);
+    type CurrencyType {
+        Amount: Decimal(17, 3);
+        Currency: String(3);
+    };
+
+    context MASTERDATA {
+        @Catalog.tableType: #COLUMN
+        entity SALES_ORGS {
+            key ID: OrgUnitIDType;
+            Description: String(16) not null;
+            Address: AddressType;
+            Phone: String(14);
+            Fax: String(14);
+        };
+
+        @Catalog.tableType: #COLUMN
+        entity CUSTOMERS {
+            key ID: Association[1..*] TO SALES.SALES_ORDERS {
+                CustomerID
+            };
+            CompanyName: String(35) not null;
+            Address: AddressType;
+            SalesOrgID: OrgUnitIDType;
+        };
+
+        @Catalog.tableType: #COLUMN
+        entity PRODUCTS {
+            key ID: BusinessIDType;
+            ProductName: String(40) not null;
+            ProductCategory: String(3);
+            Division: String(2);
+            InternalPrice: ValueType;
+            Price: ValueType;
+            Color: String(10);
+            ProductGroup: String(20);
+        };
+
+        @Catalog.tableType: #COLUMN
+        entity PRODUCT_CATEGORIES {
+            key ProductCategory: String(3);
+            Description: String(40);
+        };
+
+        VIEW CustomerSales AS SELECT FROM CUSTOMERS {
+            ID.Status,
+                CompanyName,
+                sum(ID.GrossAmount.Amount) AS GrossAmount
+        }
+        GROUP BY ID.Status, CompanyName HAVING ID.Status = 'New';
+    };
+
+    context SALES {
+        @Catalog.tableType: #COLUMN
+        entity SALES_ORDER_DETAILS {
+            key OrderID: BusinessIDType;
+            key OrderItem: String(3);
+            ProductID: BusinessIDType;
+            Quantity: Integer;
+            UnitOfMeasure: String(3);
+            Revenue: ValueType;
+            Discount: ValueType;
+        };
+
+        @Catalog.tableType: #COLUMN
+        entity SALES_ORDERS {
+            CreatedAt: LocalDate;
+            CreatedBy: String(20);
+            CustomerID: String(10) not null;
+            key ID: Association[1..*] TO SALES_ORDER_DETAILS {
+                OrderID
+            };
+            GrossAmount: CurrencyType;
+            Discount: ValueType;
+            Status: String(15) default 'New';
+            requiredDate: LocalDate;
+            shipDate: LocalDate;
+        };
+    };
+
+    context LOGISTICS {
+        @Catalog.tableType: #COLUMN
+        entity INVENTORY {
+            key ProductID: String(10);
+            key Plant: String(4);
+            key SLoc: String(4);
+            key StockType: String(1);
+            Quantity: Integer;
+            UnitOfMeasure: String(3) default 'EA';
+        };
+
+        View InventoryQuantity AS SELECT FROM INVENTORY {
+            ProductID,
+            CASE StockType
+            WHEN 'F' THEN 'Unrestricted Use'
+            WHEN 'Q' THEN 'In Quality Inspection'
+            WHEN 'X' THEN 'Blocked Stock'
+            END AS StockType,
+            sum(Quantity) AS Quantity
+        }
+        GROUP BY ProductID, StockType
+        ORDER BY ProductID, StockType;
+    };
+
+};

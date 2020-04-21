@@ -1,0 +1,12 @@
+import = [{
+    table = "gbi-student-274.gbi.data::GBI_274.MASTERDATA.SALES_ORGS";
+    schema = "GBI_274";
+    file = "gbi-student-274.gbi.data:salesorg.csv";
+    header = false;
+},
+{
+    table = "gbi-student-274.gbi.data::GBI_274.SALES.SALES_ORDERS";
+    schema = "GBI_274";
+    file = "gbi-student-274.gbi.data:salesorders.csv";
+    header = false;
+}];
