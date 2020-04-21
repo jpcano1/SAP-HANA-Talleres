@@ -1,0 +1,3 @@
+service {
+    "gbi-student-274.gbi.data::GBI_274.MASTERDATA.CUSTOMERS" as "Customers";
+}

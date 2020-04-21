@@ -9,4 +9,28 @@ import = [{
     schema = "GBI_274";
     file = "gbi-student-274.gbi.data:salesorders.csv";
     header = false;
+},
+{
+    table = "gbi-student-274.gbi.data::GBI_274.MASTERDATA.CUSTOMERS";
+    schema = "GBI_274";
+    file = "gbi-student-274.gbi.data:customers.csv";
+    header = false;
+},
+{
+    table = "gbi-student-274.gbi.data::GBI_274.LOGISTICS.INVENTORY";
+    schema = "GBI_274";
+    file = "gbi-student-274.gbi.data:inventory.csv";
+    header = false;
+},
+{
+    table = "gbi-student-274.gbi.data::GBI_274.MASTERDATA.PRODUCT_CATEGORIES";
+    schema = "GBI_274";
+    file = "gbi-student-274.gbi.data:productcategory.csv";
+    header = false;
+},
+{
+    table = "gbi-student-274.gbi.data::GBI_274.MASTERDATA.PRODUCT_CATEGORIES";
+    schema = "GBI_274";
+    file = "gbi-student-274.gbi.data:productcategory.csv";
+    header = false;
 }];

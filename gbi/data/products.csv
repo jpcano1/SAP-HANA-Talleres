@@ -1,0 +1,28 @@
+DXTR1100,Deluxe Touring Bike-Black,TOU,BI,1400.00,3000.00,Black,Shimano Road
+DXTR2100,Deluxe Touring Bike-Silver,TOU,BI,1400.00,3000.00,Silver,Shimano Road
+DXTR3100,Deluxe Touring Bike-Red,TOU,BI,1400.00,3000.00,Red,Shimano Road
+PRTR1100,Professional Touring Bike-Black,TOU,BI,1500.00,3200.00,Black,Shimano XT
+PRTR2100,Professional Touring Bike-Silver,TOU,BI,1500.00,3200.00,Silver,Shimano XT
+PRTR3100,Professional Touring Bike-Red,TOU,BI,1500.00,3200.00,Red,Shimano XT
+ORMN1100,Men's Off Road Bike Fully,ORB,BI,1200.00,2400.00,,SRAM XO
+ORWN1100,Women's Off Road Bike Fully,ORB,BI,1250.00,2500.00,,SRAM XO
+ORHT1110,Men's Off Road Bike Hard Tail Shimano,ORB,BI,900.00,1600.00,,Shimano XT
+ORHT1120,Men's Off Road Bike Hard Tail SRAM,ORB,BI,950.00,1700.00,,SRAM X9
+RAAL1110,Road Bike Alu Shimano,ROB,BI,1000.00,1700.00,,Shimano Ultegra
+RAAL1120,Road Bike Alu SRAM,ROB,BI,950.00,1650.00,,SRAM Force
+RACA1110,Road Bike Carbon Shimano,ROB,BI,2200.00,4000.00,,Shimano Dura Ace
+RACA1120,Road Bike Carbon SRAM,ROB,BI,2350.00,4200.00,,SRAM Red
+RACA1130,Road Bike Carbon Campagnolo,ROB,BI,2700.00,4500.00,,Campa Record
+FIXI1100,Edel Fixie,TRE,BI,550.00,1200.00,,
+CIMA1100,City Max,TRE,BI,700.00,1500.00,,
+EBIK1100,E-Bike Tailwind,EBI,BI,2500.00,4000.00,,
+EPAD1000,Elbow Pads,ACC,AS,37.50,75.00,,
+SHRT1000,T-shirt,ACC,AS,15.00,30.00,,
+KPAD1000,Knee Pads,ACC,AS,37.50,75.00,,
+OHMT1000,Off Road Helmet,ACC,AS,25.00,50.00,,
+RHMT1000,Road Helmet,ACC,AS,25.00,50.00,,
+CAGE1000,Water Bottle Cage,ACC,AS,9.00,18.00,,
+RKIT1000,Repair Kit,ACC,AS,16.00,32.00,,
+PUMP1000,Air Pump,ACC,AS,14.00,28.00,,
+BOTL1000,Water Bottle,ACC,AS,10.00,20.00,,
+FAID1000,First Aid Kit,ACC,AS,20.00,40.00,,
