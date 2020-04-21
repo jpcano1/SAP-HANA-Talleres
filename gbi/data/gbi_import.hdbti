@@ -33,4 +33,10 @@ import = [{
     schema = "GBI_274";
     file = "gbi-student-274.gbi.data:products.csv";
     header = false;
+},
+{
+    table = "gbi-student-274.gbi.data::GBI_274.SALES.SALES_ORDER_DETAILS";
+    schema = "GBI_274";
+    file = "gbi-student-274.gbi.data:salesordersdetails.csv";
+    header = false;
 }];

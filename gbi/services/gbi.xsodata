@@ -1,3 +1,8 @@
 service {
     "gbi-student-274.gbi.data::GBI_274.MASTERDATA.CUSTOMERS" as "Customers";
+    "gbi-student-274.gbi.data::GBI_274.MASTERDATA.SALES_ORGS" as "SalesOrg"
+    navigates ("SOrg_Customers_Association" as "SOrgCustomers");   
+
+    association "SOrg_Customers_Association" principal "SalesOrg"("ID") multiplicity "1"
+    dependent "Customers"("SalesOrgID") multiplicity "*";
 }
