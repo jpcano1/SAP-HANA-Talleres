@@ -58,8 +58,8 @@ context GBI_274 {
 
         VIEW CustomerSales AS SELECT FROM CUSTOMERS {
             ID.Status,
-                CompanyName,
-                sum(ID.GrossAmount.Amount) AS GrossAmount
+            CompanyName,
+            sum(ID.GrossAmount.Amount) AS GrossAmount
         }
         GROUP BY ID.Status, CompanyName HAVING ID.Status = 'New';
     };
@@ -90,6 +90,12 @@ context GBI_274 {
             requiredDate: LocalDate;
             shipDate: LocalDate;
         };
+
+        VIEW ProductSales as select from SALES_ORDER_DETAILS {
+            Revenue,
+            Discount,
+            sum(Quantity) AS Quantity
+        } GROUP BY ProductID, Revenue, Discount ORDER BY sum(Revenue);
     };
 
     context LOGISTICS {
@@ -106,9 +112,12 @@ context GBI_274 {
         View InventoryQuantity AS SELECT FROM INVENTORY {
             ProductID,
             CASE StockType
-            WHEN 'F' THEN 'Unrestricted Use'
-            WHEN 'Q' THEN 'In Quality Inspection'
-            WHEN 'X' THEN 'Blocked Stock'
+            WHEN 'F'
+            THEN 'Unrestricted Use'
+            WHEN 'Q'
+            THEN 'In Quality Inspection'
+            WHEN 'X'
+            THEN 'Blocked Stock'
             END AS StockType,
             sum(Quantity) AS Quantity
         }
