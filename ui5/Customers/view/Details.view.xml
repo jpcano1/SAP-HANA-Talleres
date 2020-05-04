@@ -1,0 +1,68 @@
+<mvc:View controllerName="gbi.controller.Details" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+    <Page title="Customer Details">
+        <l:Grid defaultSpan="L12 M12 S12" width="auto">
+            <l:content>
+                <f:SimpleForm id="idCusotmerForm" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" title="Customer Details" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+                    <f:content>
+
+                        <core:Title text="Customer" />
+                        <Label text="Number" />
+                        <Text text="{gbi>ID.CustomerID}" />
+                        <Label text="Name" />
+                        <Text text="{gbi>CompanyName}" />
+                        <Label text="Sales Org" />
+                        <Text text="{gbi>SalesOrgID}" />
+                        <core:Title text="Address" />
+                        <Label text="Address" />
+                        <Text text="{gbi>Address.Address}" />
+                        <Label text="City" />
+                        <Text text="{gbi>Address.City}" />
+                        <Label text="Region" />
+                        <Text text="{gbi>Address.Region}" />
+                        <Label text="Postal Code" />
+                        <Text text="{gbi>Address.Postal_code}" />
+                        <Label text="Country" />
+                        <Text text="{gbi>Address.Country}" />
+                    </f:content>
+                </f:SimpleForm>
+            </l:content>
+        </l:Grid>
+
+        <Table id="idOrdersTable" inset="false" itemPress="handleTableRowPress" items="{gbi>Orders}">
+            <columns>
+                <Column>
+                    <header>
+                        <Text text="ID" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Text text="Created At" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Text text="Amount" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Text text="Currency" />
+                    </header>
+                </Column>
+
+            </columns>
+            <items>
+                <ColumnListItem>
+
+                    <Text text="{gbi>ID.OrderID}" />
+                    <Text text="{gbi>CreatedAt}" />
+                    <Text text="{gbi>GrossAmount.Amount}" />
+                    <Text text="{gbi>GrossAmount.Currency}" />
+
+                </ColumnListItem>
+            </items>
+        </Table>
+
+    </Page>
+</mvc:View>
