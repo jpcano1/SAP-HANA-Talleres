@@ -1,0 +1,18 @@
+{
+	"ViewsCollection" : [
+		{
+			"icon" : "play",
+			"number" : "1",
+			"title" : "SAP UI5 Resources",
+			"info" : "Resources"
+		}
+	],
+	"ExerciseCollection": [
+		{
+			"icon" : "bus-public-transport",
+			"number" : "1",
+			"title" : "Hello World Exercise",
+			"info" : "HelloWorld"
+		}
+	]
+}
