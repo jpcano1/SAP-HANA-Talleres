@@ -1,0 +1,17 @@
+
+<mvc:View controllerName="gbi.controller.Master1" xmlns:mvc="sap.ui.core.mvc"
+xmlns="sap.m">
+<Page title="Sales Orders">
+<List 
+    id="ShortOrderList"
+    headerText="Orders"
+    items="{gbi>/Sales_Orders}">
+    <StandardListItem
+        type="Active"
+        press="handleListItemPress"
+        title="{gbi>ID.OrderID}"
+        description="{gbi>CustomerID}"	 />
+</List>
+
+</Page>
+</mvc:View>

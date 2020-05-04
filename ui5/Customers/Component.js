@@ -28,11 +28,21 @@ sap.ui.define([
                         name: "Details",
                         view: "Details",
                         targetAggregation: "detailPages"
+                    },
+                    {
+                        pattern: "SalesOrders",
+                        name: "Orders",
+                        view: "Master1",
+                        targetAggregation: "masterPages"
+                    },
+                    {
+                        pattern: "Sales/{entity}",
+                        name: "Details1",
+                        view: "Details1",
+                        targetAggregation: "detailPages"
                     }
                 ]
-
             }
-
         },
 
         init: function () {

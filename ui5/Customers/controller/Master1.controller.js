@@ -2,7 +2,7 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller"
 ], function (Controller) {
     "use strict";
-    return Controller.extend("gbi.controller.Master", {
+    return Controller.extend("gbi.controller.Master1", {
 
         onInit: function () {
             this.router = sap.ui.core.UIComponent.getRouterFor(this);
@@ -12,17 +12,9 @@ sap.ui.define([
 
             var entity = oItem.getSource().getBindingContext("gbi").getPath().split("'");
 
-            this.router.navTo("Details", {
-                from: "Master",
+            this.router.navTo("Details1", {
+                from: "Master1",
                 entity: entity[1]
-            });
-        },
-
-        navigateMaster: function()
-        {
-            this.router.navTo("Orders",
-            {
-                from: "Master"
             });
         }
     });

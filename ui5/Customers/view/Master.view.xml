@@ -1,17 +1,8 @@
-
-<mvc:View controllerName="gbi.controller.Master" xmlns:mvc="sap.ui.core.mvc"
-xmlns="sap.m">
-<Page title="Customers">
-<List 
-    id="ShortCustomerList"
-    headerText="Customers"
-    items="{gbi>/Customers}" >
-    <StandardListItem
-        type="Active"
-        press="handleListItemPress"
-        title="{gbi>ID.CustomerID}"
-        description="{gbi>CompanyName}"	 />
-</List>
-
-</Page>
+<mvc:View controllerName="gbi.controller.Master" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <Button text="Ir a SalesOrder" press="navigateMaster" class="myCustomButton"/>
+    <Page title="Customers">
+        <List id="ShortCustomerList" headerText="Customers" items="{gbi>/Customers}">
+            <StandardListItem type="Active" press="handleListItemPress" title="{gbi>ID.CustomerID}" description="{gbi>CompanyName}" />
+        </List>
+    </Page>
 </mvc:View>

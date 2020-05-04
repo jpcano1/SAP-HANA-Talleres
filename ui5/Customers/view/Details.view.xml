@@ -1,5 +1,5 @@
 <mvc:View controllerName="gbi.controller.Details" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
-    <Page title="Customer Details">
+    <Page title="Sales Order Details">
         <l:Grid defaultSpan="L12 M12 S12" width="auto">
             <l:content>
                 <f:SimpleForm id="idCusotmerForm" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" title="Customer Details" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
@@ -56,8 +56,8 @@
                 <ColumnListItem>
 
                     <Text text="{gbi>ID.OrderID}" />
-                    <Text text="{gbi>CreatedAt}" />
-                    <Text text="{gbi>GrossAmount.Amount}" />
+                    <Text text="{ path: 'gbi>CreatedAt', formatter: '.date'}" />
+                    <Text text="{ path: 'gbi>GrossAmount.Amount', formatter: '.formatCurrency'}" />
                     <Text text="{gbi>GrossAmount.Currency}" />
 
                 </ColumnListItem>

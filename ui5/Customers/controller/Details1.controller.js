@@ -2,7 +2,7 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller"
 ], function (Controller) {
     "use strict";
-    return Controller.extend("gbi.controller.Details", {
+    return Controller.extend("gbi.controller.Details1", {
 
         onInit: function () {
 
@@ -12,7 +12,7 @@ sap.ui.define([
         },
         onRouteMatched: function (oEvent) {
             var oParameters = oEvent.getParameters();
-            this.getView().bindElement("gbi>/Customers('" + oParameters.arguments.entity + "')");
+            this.getView().bindElement("gbi>/Sales_Orders('" + oParameters.arguments.entity + "')");
         },
         formatCurrency: function (value) {
             var d = ".";
