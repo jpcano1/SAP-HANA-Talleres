@@ -1,0 +1,68 @@
+<mvc:View controllerName="gbi.controller.Detail" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+    <Page title="Product Details">
+        <l:Grid defaultSpan="L12 M12 S12" width="auto">
+            <l:content>
+                <f:SimpleForm id="idProductForm" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" title="Product Details" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+                    <f:content>
+                        <core:Title text="" />
+                        <Image src="{ path : 'gbi>ID', formatter: '.imageURL' }" height="150px" width="150px" />
+                        <core:Title text="" />
+                        <Label text="Number" />
+                        <Text text="{gbi>ID}" />
+                        <Label text="Name" />
+                        <Text text="{gbi>ProductName}" />
+                        <Label text="Color" />
+                        <Text text="{gbi>Color}" />
+                        <core:Title text="" />
+                        <core:Title text="" />
+                        <Label text="Price" />
+                        <ObjectNumber number="{path: 'gbi>Price', formatter: '.formatCurrency'}" />
+                        <Label text="Internal Price" />
+                        <ObjectNumber number="{path: 'gbi>InternalPrice', formatter: '.formatCurrency'}" />
+                    </f:content>
+                </f:SimpleForm>
+            </l:content>
+        </l:Grid>
+
+        <Table id="idProductsTable" inset="false" itemPress="handleTableRowPress" items="{gbi>Inventory}">
+            <columns>
+                <Column minScreenWidth="Tablet" demandPopin="true" mergeDuplicates="true">
+                    <header>
+                        <Text text="Product" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Text text="Plant" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Text text="SLoc" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Text text="Quantity" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Text text="Stock Type" />
+                    </header>
+                </Column>
+
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <Text text="{gbi>ProductID}" />
+                    <Text text="{gbi>Plant}" />
+                    <Text text="{gbi>SLoc}" />
+                    <ObjectNumber number="{gbi>Quantity}" numberUnit="{gbi>UnitOfMeasure}" />
+                    <Text text="{gbi>StockType}" />
+                </ColumnListItem>
+            </items>
+        </Table>
+
+    </Page>
+</mvc:View>

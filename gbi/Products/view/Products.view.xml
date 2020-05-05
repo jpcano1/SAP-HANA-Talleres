@@ -1,0 +1,7 @@
+<mvc:View controllerName="gbi.controller.Products" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+    <Page title="Products" navButtonPress="handleNavButtonPress" showNavButton="true">
+        <List id="idProductList" headerText="Products" items="{gbi>Products}">
+            <StandardListItem type="Active" press="handleListItemPress" title="{gbi>ID}" description="{gbi>ProductName}" />
+        </List>
+    </Page>
+</mvc:View>
